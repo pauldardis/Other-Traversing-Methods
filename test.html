@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title> 
+        How to get hex color value 
+        of RGB color value 
+    </title> 
+</head> 
+  
+<body style="text-align:center;"> 
+      
+    <h1 style="color:green;">  
+        GeeksforGeeks  
+    </h1> 
+      
+    <p id="GFG_UP" style= 
+        "font-size: 19px; font-weight: bold;"> 
+    </p> 
+      
+    <button onClick="GFG_Fun()"> 
+        click here 
+    </button> 
+      
+    <p id="GFG_DOWN" style= 
+        "color: green; font-size: 24px; font-weight: bold;"> 
+    </p> 
+      
+    <script> 
+        var up = document.getElementById('GFG_UP'); 
+        var down = document.getElementById('GFG_DOWN'); 
+        up.innerHTML = 'Click on button to hex code of the color'; 
+  
+        function convert(rgb) { 
+            rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/); 
+  
+            function hexCode(i) { 
+                return ("0" + parseInt(i).toString(16)).slice(-2); 
+            } 
+            return "#" + hexCode(rgb[1]) + hexCode(rgb[2])  
+                    + hexCode(rgb[3]); 
+        } 
+  
+        function GFG_Fun() { 
+            down.innerHTML = "Hex Code of 'white' = " 
+                + convert('rgb(255,255,255)'); 
+        } 
+    </script> 
+</body> 
+  
+</html>     
